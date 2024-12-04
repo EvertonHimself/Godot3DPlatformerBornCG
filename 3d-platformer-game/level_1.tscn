@@ -1,4 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://br40wfog6lxfr"]
+[gd_scene load_steps=7 format=3 uid="uid://br40wfog6lxfr"]
+
+[ext_resource type="PackedScene" uid="uid://bl211pdl71klu" path="res://block.tscn" id="1_bwkxo"]
+[ext_resource type="PackedScene" uid="uid://bq7f1rgk26cwf" path="res://steve.tscn" id="1_v7c36"]
+[ext_resource type="Texture2D" uid="uid://bkob0e7rlotr3" path="res://icon.svg" id="3_k3ouw"]
+[ext_resource type="Script" path="res://icon.gd" id="4_onmjx"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_7lubr"]
 size = Vector3(10, 0.5, 10)
@@ -23,3 +28,26 @@ shape = SubResource("BoxShape3D_g663g")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.925758, 0.378115, 0, -0.378115, 0.925758, -1.03672, 9.51154, 32.3872)
+shadow_enabled = true
+
+[node name="Blocks" type="Node3D" parent="."]
+
+[node name="Block1" parent="Blocks" instance=ExtResource("1_bwkxo")]
+transform = Transform3D(1, 0, 0, 0, 0.698178, -0.715924, 0, 0.715924, 0.698178, 0, 5, 0)
+
+[node name="Block2" parent="Blocks" instance=ExtResource("1_bwkxo")]
+transform = Transform3D(1, 0, 0, 0, 0.698178, -0.715924, 0, 0.715924, 0.698178, 0, 6.95247, 0)
+
+[node name="Block3" parent="Blocks" instance=ExtResource("1_bwkxo")]
+transform = Transform3D(1, 0, 0, 0, 0.698178, -0.715924, 0, 0.715924, 0.698178, 0, 8.73995, 0)
+
+[node name="Block4" parent="Blocks" instance=ExtResource("1_bwkxo")]
+transform = Transform3D(1, 0, 0, 0, 0.698178, -0.715924, 0, 0.715924, 0.698178, 0, 10.6924, 0)
+
+[node name="Steve" parent="." instance=ExtResource("1_v7c36")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.694466, 3.08356)
+
+[node name="Icon" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.63522, 4.35009)
+texture = ExtResource("3_k3ouw")
+script = ExtResource("4_onmjx")
